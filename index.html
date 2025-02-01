@@ -32,6 +32,10 @@
       margin-top: 0;
     }
 
+    li {
+      color: #000000;
+    }
+
     .container {
       max-width: 800px;
       margin: 20px auto;
@@ -48,6 +52,63 @@
 
     a:hover {
       text-decoration: underline;
+    }
+  
+    /* Expandable Sections */
+    .expandable {
+      margin-bottom: 20px;
+    }
+
+    .expandable-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .expandable-header:hover {
+      background-color: #d5dbdb;
+    }
+
+    .expandable-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #2c3e50;
+    }
+
+    .expandable-header .arrow {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .expandable-content {
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 0 0 8px 8px;
+      display: none; /* Hidden by default */
+    }
+
+    .expandable-content ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #555;
+    }
+
+    .expandable-content ul li {
+      margin-bottom: 5px;
+    }
+
+    /* Open state for expandable sections */
+    .expandable.open .expandable-content {
+      display: block;
+    }
+
+    .expandable.open .arrow {
+      transform: rotate(180deg);
     }
 
     /* GitHub Projects Section */
@@ -271,224 +332,401 @@
 </head>
 <body>
   <header>
-    <h1>Portfolio</h1>
-    <p>GitHub Projects, Work History & Education</p>
+    <h1>Github Projects | Work History | Education</h1>
   </header>
 
   <div class="container">
     <!-- GitHub Projects Section -->
-    <h2>GitHub Projects</h2>
-    <div class="projects-list">
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/bank-app" target="_blank">Mobile Banking</a></h3>
-        <p>Developed an Android-based mobile banking application in Java with Flask and SqlAlchemy backend. The app enables users to view their bank accounts
-          and transaction history, transfer funds, and access paginated transaction views for improved performance and user experience. Implemented robust security
-          measures including storing password hashes securely in the database and ensuring secure client-server communication via HTTPS. Additionally, automated
-          end-to-end mobile test scenarios using Appium and Pytest, utilizing the Page Object Model to ensure a modular and maintainable testing framework.</p>
-          <div class="group-card">
-            <h3>Backend & Testing Repositories</h3>
-            <div class="sub-projects">
-              <div class="project-card">
-                <h3><a href="https://github.com/anpa6841/flask-bank-backend" target="_blank">Flask Bank Backend</a></h3>
-                <p>Backend Repository for the mobile bank app built in flask </p>
-              </div>
-              <div class="project-card">
-                <h3><a href="https://github.com/anpa6841/android-tests" target="_blank">Android Tests</a></h3>
-                <p>E2E Tests for Android-based mobile bank app.</p>
+    <h2>Projects</h2>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/rhcsa" target="_blank">Red Hat Certified System Administrator (RHCSA)</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>A comprehensive guide for RHCSA objectives.</li>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/rhce-ex300" target="_blank">Red Hat Certified Engineer (RHCE) EX300</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>A comprehensive guide for RHCE EX300 objectives.</li>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/shell-utilities" target="_blank">Shell Utilities</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Developed custom C implementations of essential Unix utilities, including cat, head, tail, nice & find.</li><li>These implementations added advanced
+            features such as line numbering, flexible output options (write/append), user-specified byte/line counts, process priority control, and recursive directory traversal
+            with filters for file size, modification time, permissions, and ownership.</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/process-explorer" target="_blank">Process Explorer</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>A Terminal-Based Process Explorer that shows PID, process name, CPU usage, memory usage, status, thread count, age, and username.</li>
+            <li>Updates every second and also provides process tree view and process termination capabilities.</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/file-explorer" target="_blank">File Explorer</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>A Terminal-Based file explorer that lets users browse directories and files using arrow keys and view file infomation
+              such as file name, file type, file size and path.
+            </li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/web-application-firewall" target="_blank">Web Application Firewall</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Implemented a Web Application Firewall (WAF) to safeguard web applications against SQL injection, cross-site scripting, command injection, and
+              other attacks.</li><li>Additional features include URL filtering, header analysis, and bot detection using rate limiting techniques.</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/load-balancer" target="_blank">Load Balancer</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Built a multi-threaded load balancer in C++ supporting round-robin, weighted round-robin, IP hashing, and random modes.</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/http-proxy" target="_blank">HTTP Proxy</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Developed an HTTP proxy server in C++ with ThreadPool for handling concurrent client requests and forwarding them to destination servers.</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/rce-server" target="_blank">Remote Code Execution Server</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Implemented a multi-threaded RCE server in C using POSIX threads.</li><li>Allows clients to execute system commands/custom scripts on remote machines,
+              with server sending back captured output.</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/file-server" target="_blank">File Server</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Built a file server that allows authenticated user to upload and download files</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/chat-server" target="_blank">Chat Server</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Built a simple chat server in C supporting multiple client connections using non-blocking I/O.</li>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/virustotal-client" target="_blank">VirusTotal Client</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>Implemented a VirusTotal Client in Python for scanning files and URLs, storing analysis results efficiently.</li><li>Developed an analysis dashboard
+            to aggregate scan results from multiple engines.</li>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/ecommerce-web-app" target="_blank">Ecommerce Web App</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>Developed an E-commerce web application using Flask and SQLAlchemy, featuring functionalities like product search, category filtering, and user
+            registration.</li><li>Automated end-to-end scenarios for the web application using Selenium and Pytest, ensuring comprehensive testing and reliability.</p>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/CryptoCalculator" target="_blank">CryptoCalculator</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>Developed a cryptocurrency calculator GUI using Java Swing that consumes CoinMarketCap’s API for currency conversion.</li>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/hash-generator" target="_blank">Hash Generator</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>Built a hash generator utility using Java Swing for file and string inputs.</li><li>Supported hash algorithms
+            include MD5, SHA-256, SHA-512, RIPEMD-160, and Whirlpool.</li>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/OverTheWire" target="_blank">OverTheWire (CTF's)</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>Solutions for Bandit and Leviathan Wargames</li>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/walkthroughs" target="_blank">Walkthroughs (OSCP/HTB)</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+        <div class="project-card">
+          <li>Detailed Walkthroughs of Proving Grounds and Hack The Box machines</li>
+        </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/bank-app" target="_blank">Mobile Banking</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+      <div class="expandable-content">
+        <div class="project-card">
+          <li>Developed an Android-based mobile banking application in Java with Flask and SqlAlchemy backend.</li>
+          <li>The app enables users to view their bank accounts and transaction history, transfer funds, and access
+            paginated transaction views for improved performance and user experience.</li>
+            <li>Implemented robust security measures including storing password hashes securely in the database and
+              ensuring secure client-server communication via HTTPS. </li>
+            <li>Additionally, automated end-to-end mobile test scenarios using Appium and Pytest, utilizing the
+              Page Object Model to ensure a modular and maintainable testing framework.</li>
+            <br/>
+            <div class="group-card">
+              <h3>Backend & Testing Repositories</h3>
+              <div class="sub-projects">
+                <div class="project-card">
+                  <h3><a href="https://github.com/anpa6841/flask-bank-backend" target="_blank">Flask Bank Backend</a></h3>
+                  <li>Backend Repository for the mobile bank app built in flask </li>
+                </div>
+                <div class="project-card">
+                  <h3><a href="https://github.com/anpa6841/android-tests" target="_blank">Android Tests</a></h3>
+                  <li>E2E Tests for Android-based mobile bank app.</li>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/password-manager-plugin" target="_blank">Password Manager Plugin</a></h3>
-        <p>Developed a password manager plugin in JavaScript that securely stores and manages passwords. Key features include adding, editing, and deleting
-          passwords, auto-generating passwords, importing/exporting passwords in CSV format, and autofilling user credentials. Site credentials are encrypted
-          and stored in IndexDB using the Web Crypto API, with encryption keys derived from the master password using the PBKDF2 key derivation function.
-          Implemented session management across multiple tabs using the browser storage API to maintain user sessions securely.</p>
       </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/rhcsa" target="_blank">RHCSA</a></h3>
-        <p>A comprehensive guide for RHCSA objectives.</p>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/password-manager-plugin" target="_blank">Password Manager Plugin</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Developed a password manager plugin in JavaScript that securely stores and manages passwords.</li>
+            <li>Key features include adding, editing, and deleting passwords, auto-generating passwords, importing/exporting passwords in CSV format,
+              and autofilling user credentials.</li>
+            <li>Site credentials are encrypted and stored in IndexDB using the Web Crypto API, with encryption keys derived from the master password using the PBKDF2 key derivation function.</li>
+            <li>Implemented session management across multiple tabs using the browser storage API to maintain user sessions securely.</li>
+          </div>
+        </div>
       </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/rhce-ex300" target="_blank">RHCE EX300</a></h3>
-        <p>A comprehensive guide for RHCE-EX300 objectives.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/shell-utilities" target="_blank">Shell Utilities</a></h3>
-        <p>Developed custom C implementations of essential Unix utilities (cat, head, tail, nice, and find), adding advanced features such as line numbering,
-          flexible output options (write/append), user-specified byte/line counts, process priority control, and recursive directory traversal with filters
-          for file size, modification time, permissions, and ownership.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/fraud-detection-in-financial-services" target="_blank">Fraud Detection In Financial Services</a></h3>
-        <p>Developed a real-time fraud detection system for banking applications by ingesting transaction data through Apache Kafka Producer. Leveraged
-          Apache Spark Streaming to process data, extract features, and apply an XGBoost model to score each transaction's fraud likelihood and trigger alerts
-          for fraudulent transactions.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/process-explorer" target="_blank">Process Explorer</a></h3>
-        <p>A Terminal-Based Process Explorer that shows PID, process name, CPU usage, memory usage, status, thread count, age, and username. Updates every second
-          and also provides process tree view and process termination capabilities.
-        </p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/file-explorer" target="_blank">File Explorer</a></h3>
-        <p>A Terminal-Based file explorer that lets users browse directories and files using arrow keys and view file infomation
-          such as file name, file type, file size and path.
-        </p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/web-application-firewall" target="_blank">Web Application Firewall</a></h3>
-        <p> Implemented a Web Application Firewall (WAF) to safeguard web applications against SQL injection, cross-site scripting, command injection, and
-          other attacks. Additional features include URL filtering, header analysis, and bot detection using rate limiting techniques.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/load-balancer" target="_blank">Load Balancer</a></h3>
-        <p>Built a multi-threaded load balancer in C++ supporting round-robin, weighted round-robin, IP hashing, and random modes.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/http-proxy" target="_blank">HTTP Proxy</a></h3>
-        <p>Developed an HTTP proxy server in C++ with ThreadPool for handling concurrent client requests and forwarding them to destination servers.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/rce-server" target="_blank">Remote Code Execution Server</a></h3>
-        <p>Implemented a multi-threaded RCE server in C using POSIX threads. Allows clients to execute system commands/custom scripts on remote machines,
-          with server sending back captured output.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/file-server" target="_blank">File Server</a></h3>
-        <p>A bried descrition</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/chat-server" target="_blank">Chat Server</a></h3>
-        <p>Built a simple chat server in C supporting multiple client connections using non-blocking I/O.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/virustotal-client" target="_blank">VirusTotal Client</a></h3>
-        <p>Implemented a VirusTotal Client in Python for scanning files and URLs, storing analysis results efficiently. Developed an analysis dashboard
-          to aggregate scan results from multiple engines.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/eccomerce-web-app" target="_blank">Eccomerce Web App</a></h3>
-        <p>Developed an E-commerce web application using Flask and SQLAlchemy, featuring functionalities like product search, category filtering, and user
-          registration. Automated end-to-end scenarios for the web application using Selenium and Pytest, ensuring comprehensive testing and reliability.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/CryptoCalculator" target="_blank">CryptoCalculator</a></h3>
-        <p>Developed a cryptocurrency calculator GUI using Java Swing that consumes CoinMarketCap’s API for currency conversion.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/hash-generator" target="_blank">Hash Generator</a></h3>
-        <p>Built a hash generator utility using Java Swing for file and string inputs. Supported hash algorithms include MD5, SHA-256, SHA-512, RIPEMD-160, and Whirlpool.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/OverTheWire" target="_blank">OverTheWire (CTF's)</a></h3>
-        <p>Solutions for Bandit and Leviathan wargames</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/walkthroughs" target="_blank">Walkthroughs (OSCP/HTB)</a></h3>
-        <p>Detailed Walkthroughs of Proving Grounds and Hack The Box machines</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/blackjack" target="_blank">Blackjack</a></h3>
-        <p>A basic GUI-based Blackjack game using Tkinter in Python. Also, includes a command-line version of the game.</p>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/anpa6841/bits-and-scripts" target="_blank">Bits And Scripts</a></h3>
-        <p>Helper scripts to automate mundane tasks.</p>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h3><a href="https://github.com/anpa6841/fraud-detection-in-financial-services" target="_blank">Fraud Detection In Financial Services</a></h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expandable-content">
+          <div class="project-card">
+            <li>Developed a real-time fraud detection system for banking applications by ingesting transaction data through Apache Kafka Producer.</li>
+            <li>Leveraged Apache Spark Streaming to process data, extract features, and apply an XGBoost model to score each transaction's fraud likelihood and trigger alerts
+              for fraudulent transactions.</li>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
   <div class="container">
         <!-- Work History Section -->
         <h2>Work History</h2>
-        <div class="work-history">
-          <div class="job-card">
-            <h3>QA Engineer</h3>
-            <p><strong>Quanata</strong> | Jul 2022 - Jun 2023</p>
-            <ul>
-              <li>Automated BDD scenarios through API calls in the current test framework, substantially enhancing backend test coverage.</li>
-              <li>Defined test cases in TestRail, specifying test steps, expected results, and test data requirements for detailed test coverage.</li>
-              <li>Responsible for manual testing of the Customer Care Portal, resolving 70% of critical issues prior to production.</li>
-              <li>Prioritized critical issues within 1 hour of identification based on severity and potential impact and conducted root cause analysis for all failed tests to determine the underlying cause, such as environment problems or code changes.</li>
-              <li>Achieved an average turnaround time of 4 hours for resolving issues through effective collaboration with development teams.</li>
-              <li>Participated in exploratory testing sessions to uncover hidden defects, contributing to a more robust and resilient application.</li>
-              <li>Incorporated a shift-left strategy by closely collaborating with product and development teams to gather requirements, detect defects early in the development lifecycle, and ensure continuous feedback on iterative code changes.</li>
-            </ul>
+        <div class="expandable">
+          <div class="expandable-header" onclick="toggleExpandable(this)">
+            <p><strong>QA Engineer - Quanata</strong> | San Francisco, CA | Jul 2022 - Jun 2023</p>
+            <span class="arrow">▼</span>
           </div>
-          <div class="job-card">
-            <h3>Software Developer In Test</h3>
-            <p><strong>Amount</strong> | Aug 2021 - Jul 2022</p>
-            <ul>
-              <li>Automated 90% of test cases using TestCafe and Javascript, reducing the regression testing cycle from 3 days to 4 hours.</li>
-              <li>Migrated existing TestCafe tests to BDD Gherkin standard for the credit card product, improving test maintainability, readability, and collaboration between technical and non-technical stakeholders.</li>
-              <li>Cut down the time to run end-to-end tests through the optimization of test scripts and parallel execution strategies.</li>
-              <li>Implemented contract testing using Postman, ensuring thorough coverage across multiple API schema versions.</li>
-              <li>Prepared and maintained detailed test documentation including test plans, test matrices, and test summary reports.</li>
-              <li>Tracked and managed defects using JIRA, ensuring timely resolution and closure of issues.</li>
-            </ul>
+          <div class="expandable-content">
+            <div class="job-card">
+              <ul>
+                <li>Automated BDD scenarios through API calls in the current test framework, substantially enhancing backend test coverage.</li>
+                <li>Defined test cases in TestRail, specifying test steps, expected results, and test data requirements for detailed test coverage.</li>
+                <li>Responsible for manual testing of the Customer Care Portal, resolving 70% of critical issues prior to production.</li>
+                <li>Prioritized critical issues within 1 hour of identification based on severity and potential impact and conducted root cause analysis for all failed tests to determine the underlying cause, such as environment problems or code changes.</li>
+                <li>Achieved an average turnaround time of 4 hours for resolving issues through effective collaboration with development teams.</li>
+                <li>Participated in exploratory testing sessions to uncover hidden defects, contributing to a more robust and resilient application.</li>
+                <li>Incorporated a shift-left strategy by closely collaborating with product and development teams to gather requirements, detect defects early in the development lifecycle, and ensure continuous feedback on iterative code changes.</li>
+              </ul>
+            </div>
           </div>
-          <div class="job-card">
-            <h3>VMWare</h3>
-            <p><strong>Automation Engineer</strong> | Jul 2019 - Aug 2020</p>
-            <ul>
-              <li>Automated desktop application testing using Appium and Ruby for Windows Tunnel VPN Client.</li>
-              <li>Manually executed regression test suites on a bi-weekly release cadence, ensuring timely delivery of high-quality software.</li>
-              <li>Migrated the VPN TunnelLog Viewer utility tool from C# to Python, with the goal of streamlining the deployment process.</li>
-              <li>Facilitated user acceptance testing (UAT) sessions with stakeholders to verify software meets business requirements.</li>
-              <li>Guided code review sessions and offered feedback to developers, fostering a culture of quality and continuous improvement.</li>
-              <li>Developed and maintained diagnostic scripts in PowerShell, optimizing the analysis and troubleshooting process, resulting in a reduction in issue resolution time, and improving communication efficiency with customers.</li>
-            </ul>
+        </div>
+        <div class="expandable">
+          <div class="expandable-header" onclick="toggleExpandable(this)">
+            <p><strong>Software Developer In Test - Amount</strong> | Chicago, IL | Aug 2021 - Jul 2022</p>
+            <span class="arrow">▼</span>
           </div>
-          <div class="job-card">
-            <h3>Software Engineer In Test</h3>
-            <p><strong>NetApp</strong> | Jul 2017 - May 2019</p>
-            <ul>
-              <li>Implemented networking API tests in Python, integrating the Arista switches' API to automate switch configuration and cleanup prior to test execution. This streamlined setup and accelerated test execution, automating tasks such as configuring network interfaces, network bonding, VLANs, firewall rules, etc.</li>
-              <li>Organized the tests into distinct groups to be executed within a lab environment, covering both bare-metal storage nodes and containerized/virtualized setups.</li>
-              <li>Worked closely with DevOps teams to integrate automated tests into the CI/CD pipeline, leading to earlier detection of potential issues in the development cycle.</li>
-              <li>Fetched network information dynamically in test environments instead of assigning hardcoded IP addresses to network interfaces, effectively minimizing flaky test failures encountered during daily CI runs as part of the build process.</li>
-              <li>Collaborated with product management to understand business requirements and translate them into effective test strategies.</li>
-              <li>Participated in Agile meetings, including sprint planning and retrospectives, to align testing efforts with development goals.</li>
-              <li>Trained junior testers on best practices in code quality, ensuring adherence to standards for developing modular frameworks.</li>
-            </ul>
+          <div class="expandable-content">
+            <div class="job-card">
+              <ul>
+                <li>Automated 90% of test cases using TestCafe and Javascript, reducing the regression testing cycle from 3 days to 4 hours.</li>
+                <li>Migrated existing TestCafe tests to BDD Gherkin standard for the credit card product, improving test maintainability, readability, and collaboration between technical and non-technical stakeholders.</li>
+                <li>Cut down the time to run end-to-end tests through the optimization of test scripts and parallel execution strategies.</li>
+                <li>Implemented contract testing using Postman, ensuring thorough coverage across multiple API schema versions.</li>
+                <li>Prepared and maintained detailed test documentation including test plans, test matrices, and test summary reports.</li>
+                <li>Tracked and managed defects using JIRA, ensuring timely resolution and closure of issues.</li>
+              </ul>
+            </div>
           </div>
-          <!-- Add more work history items as needed -->
+        </div>
+        <div class="expandable">
+          <div class="expandable-header" onclick="toggleExpandable(this)">
+            <p><strong>Automation Engineer - VMWare</strong> | Sandy Springs, GA | Jul 2019 - Jul 2020</p>
+            <span class="arrow">▼</span>
+            </div>
+            <div class="expandable-content">
+              <div class="job-card">
+                <ul>
+                  <li>Automated desktop application testing using Appium and Ruby for Windows Tunnel VPN Client.</li>
+                  <li>Manually executed regression test suites on a bi-weekly release cadence, ensuring timely delivery of high-quality software.</li>
+                  <li>Migrated the VPN TunnelLog Viewer utility tool from C# to Python, with the goal of streamlining the deployment process.</li>
+                  <li>Facilitated user acceptance testing (UAT) sessions with stakeholders to verify software meets business requirements.</li>
+                  <li>Guided code review sessions and offered feedback to developers, fostering a culture of quality and continuous improvement.</li>
+                  <li>Developed and maintained diagnostic scripts in PowerShell, optimizing the analysis and troubleshooting process, resulting in a reduction in issue resolution time, and improving communication efficiency with customers.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <div class="expandable">
+          <div class="expandable-header" onclick="toggleExpandable(this)">
+            <p><strong>Software Engineer In Test - NetApp</strong> | Boulder, CO | Jul 2017 - May 2019</p>
+            <span class="arrow">▼</span>
+            </div>
+            <div class="expandable-content">
+              <div class="job-card">
+                <ul>
+                  <li>Implemented networking API tests in Python, integrating the Arista switches' API to automate switch configuration and cleanup prior to test execution. This streamlined setup and accelerated test execution, automating tasks such as configuring network interfaces, network bonding, VLANs, firewall rules, etc.</li>
+                  <li>Organized the tests into distinct groups to be executed within a lab environment, covering both bare-metal storage nodes and containerized/virtualized setups.</li>
+                  <li>Worked closely with DevOps teams to integrate automated tests into the CI/CD pipeline, leading to earlier detection of potential issues in the development cycle.</li>
+                  <li>Fetched network information dynamically in test environments instead of assigning hardcoded IP addresses to network interfaces, effectively minimizing flaky test failures encountered during daily CI runs as part of the build process.</li>
+                  <li>Collaborated with product management to understand business requirements and translate them into effective test strategies.</li>
+                  <li>Participated in Agile meetings, including sprint planning and retrospectives, to align testing efforts with development goals.</li>
+                  <li>Trained junior testers on best practices in code quality, ensuring adherence to standards for developing modular frameworks.</li>
+                </ul>
+              </div>
+          </div>
+        </div> 
+         <!-- Add more work history items as needed -->
     </div>
 
     <div class="container">
         <!-- Education Section -->
-        <h2>Education</h2>
-        <div class="education-list">
-          <div class="education-card">
-            <h3>Master of Science in Interdisciplinary Telecommunication Program (ITP) - Network Security</h3>
-            <p><strong>University of Colorado, Boulder</strong> | Graduated: May 2017</p>
+        <div class="expandable">
+          <div class="expandable-header" onclick="toggleExpandable(this)">
+            <h2>Education</h2>
+            <span class="arrow">▼</span>
           </div>
-        
-          <div class="education-card">
-            <h3>Bachelor of Electronics & Telecommunication Engineering</h3>
-            <p><strong>Dwarkadas J. Sanghvi College of Engineering</strong> | Graduated: May 2015</p>
+            <div class="expandable-content">
+              <div class="education-list">
+                <div class="education-card">
+                  <p style="color: #000000">Master of Science in Interdisciplinary Telecommunication Program (ITP) - Network Security</p>
+                  <p style="color: #000000"><strong>University of Colorado, Boulder</strong> | Graduated: May 2017</p>
+                </div>
+                <div class="education-card">
+                  <p style="color: #000000">Bachelor of Electronics & Telecommunication Engineering</p>
+                  <p style="color: #000000"><strong>Dwarkadas J. Sanghvi College of Engineering</strong> | Graduated: May 2015</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
     </div>
     
     <!-- Certifications -->
     <div class="container">
       <!-- Education Section -->
-      <h2>Certifications</h2>
-      <div class="education-card">
-        <ul>
-          <li><a href="https://www.credly.com/badges/2e6af729-161b-427c-93f9-9fa284a5ec9e/public_url" target="_blank">AWS Certified Solutions Architect – Associate</a></li>
-          <li><a href="https://www.credly.com/badges/2153d465-57f8-484a-923a-f722300c8de6/public_url" target="_blank">AWS Certified SysOps Administrator – Associate</a></li>
-          <li><a href="https://www.credly.com/badges/dab1c854-081f-4831-84a8-b33c1c1ce1c8/public_url" target="_blank">AWS Certified DevOps Engineer – Professional</a></li>
-          <li><a href="https://www.credly.com/badges/38ba054f-3d6b-4461-895a-f88b47e5d405" target="_blank">Splunk Core Certified User</a></li>
-          <li><a href="https://verified.elearnsecurity.com/certificates/5d33bf46-0142-4097-8191-0dbd84f9fa6b" target="_blank">eLearnSecurity Junior Penetration Tester (eJPT)</a></li>
-        </ul>
-      </div>
+      <div class="expandable">
+        <div class="expandable-header" onclick="toggleExpandable(this)">
+          <h2>Certifications</h2>
+          <span class="arrow">▼</span>
+        </div>
+          <div class="expandable-content">
+            <div class="education-card">
+              <ul>
+                <li><a href="https://www.credly.com/badges/2e6af729-161b-427c-93f9-9fa284a5ec9e/public_url" target="_blank">AWS Certified Solutions Architect – Associate</a></li>
+                <li><a href="https://www.credly.com/badges/2153d465-57f8-484a-923a-f722300c8de6/public_url" target="_blank">AWS Certified SysOps Administrator – Associate</a></li>
+                <li><a href="https://www.credly.com/badges/dab1c854-081f-4831-84a8-b33c1c1ce1c8/public_url" target="_blank">AWS Certified DevOps Engineer – Professional</a></li>
+                <li><a href="https://www.credly.com/badges/38ba054f-3d6b-4461-895a-f88b47e5d405" target="_blank">Splunk Core Certified User</a></li>
+                <li><a href="https://verified.elearnsecurity.com/certificates/5d33bf46-0142-4097-8191-0dbd84f9fa6b" target="_blank">eLearnSecurity Junior Penetration Tester (eJPT)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <script>
+    // JavaScript to handle expand/collapse functionality
+    function toggleExpandable(header) {
+      const expandable = header.parentElement;
+      expandable.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
