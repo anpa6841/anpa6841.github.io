@@ -329,39 +329,7 @@
     </header>
     <div class="container">
         <!-- GitHub Projects Section -->
-        <h2>Projects</h2> <!-- Dummy Structure -->
-        <!-- <div class="expandable">
-            <div class="expandable-header" onclick="toggleExpandable(this)">
-                <h3><a href="#">Mobile Banking</a></h3> <span class="arrow">▼</span>
-            </div>
-            <div class="expandable-content">
-                <div class="project-card">
-                    <div class="group-card">
-                        <div class="sub-projects">
-                            <div class="project-card">
-                                <h3><a href="https://github.com/anpa6841/flask-bank-backend" target="_blank">Flask Bank Backend</a></h3>
-                                <li>Backend Repository for the mobile bank app built in flask </li>
-                            </div>
-                            <div class="project-card">
-                                <h3><a href="https://github.com/anpa6841/android-tests" target="_blank">Android Tests</a></h3>
-                                <li>E2E Tests for Android-based mobile bank app.</li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Dummy Structure -->
-        <div class="expandable">
-            <div class="expandable-header" onclick="toggleExpandable(this)">
-                <h3><a href="https://github.com/anpa6841/flight-tracker" target="_blank">Flight Tracker</a></h3> <span class="arrow">▼</span>
-            </div>
-            <div class="expandable-content">
-                <div class="project-card">
-                    <li>Tracks flights in real-time.</li>
-                </div>
-            </div>
-        </div>
+        <h2>Projects</h2>
         <div class="expandable">
             <div class="expandable-header" onclick="toggleExpandable(this)">
                 <h3><a href="#">Network Security</a></h3> <span class="arrow">▼</span>
@@ -445,6 +413,30 @@
         </div>
         <div class="expandable">
             <div class="expandable-header" onclick="toggleExpandable(this)">
+                <h3><a href="https://github.com/anpa6841/web-application-fuzzer" target="_blank">Web Application Fuzzer</a></h3> <span class="arrow">▼</span>
+            </div>
+            <div class="expandable-content">
+                <div class="project-card">
+                    <li>A web application fuzzer that can test a given URL with a list of common attack payloads.</li>
+                    <li>Features include fuzzing GET/POST requests, multiple query parameters, randomized headers, and proxy support.</li>
+                </div>
+            </div>
+        </div>
+        <div class="expandable">
+            <div class="expandable-header" onclick="toggleExpandable(this)">
+                <h3><a href="https://github.com/anpa6841/password-manager-plugin" target="_blank">Password Manager Plugin</a></h3> <span class="arrow">▼</span>
+            </div>
+            <div class="expandable-content">
+                <div class="project-card">
+                    <li>Developed a password manager plugin in JavaScript that securely stores and manages passwords.</li>
+                    <li>Key features include adding, editing, and deleting passwords, auto-generating passwords, importing/exporting passwords in CSV format, and autofilling user credentials.</li>
+                    <li>Site credentials are encrypted and stored in IndexDB using the Web Crypto API, with encryption keys derived from the master password using the PBKDF2 key derivation function.</li>
+                    <li>Implemented session management across multiple tabs using the browser storage API to maintain user sessions securely.</li>
+                </div>
+            </div>
+        </div>
+        <div class="expandable">
+            <div class="expandable-header" onclick="toggleExpandable(this)">
                 <h3><a href="#">Linux</a></h3> <span class="arrow">▼</span>
             </div>
             <div class="expandable-content">
@@ -463,28 +455,6 @@
                                 <h3><a href="https://github.com/anpa6841/shell-utilities" target="_blank">Shell Utilities</a></h3>
                                 <li>Developed custom C implementations of essential Unix utilities, including cat, head, tail, nice & find.</li>
                                 <li>These implementations added advanced features such as line numbering, flexible output options (write/append), user-specified byte/line counts, process priority control, and recursive directory traversal with filters for file size, modification time, permissions, and ownership.</li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="expandable">
-            <div class="expandable-header" onclick="toggleExpandable(this)">
-                <h3><a href="#">TUI</a></h3> <span class="arrow">▼</span>
-            </div>
-            <div class="expandable-content">
-                <div class="project-card">
-                    <div class="group-card">
-                        <div class="sub-projects">
-                            <div class="project-card">
-                                <h3><a href="https://github.com/anpa6841/process-explorer" target="_blank">Process Explorer</a></h3>
-                                <li>A Terminal-Based Process Explorer that shows PID, process name, CPU usage, memory usage, status, thread count, age, and username.</li>
-                                <li>Updates every second and also provides process tree view and process termination capabilities.</li>
-                            </div>
-                            <div class="project-card">
-                                <h3><a href="https://github.com/anpa6841/file-explorer" target="_blank">File Explorer</a></h3>
-                                <li>A Terminal-Based file explorer that lets users browse directories and files using arrow keys and view file infomation such as file name, file type, file size and path. </li>
                             </div>
                         </div>
                     </div>
@@ -553,51 +523,23 @@
         </div>
         <div class="expandable">
             <div class="expandable-header" onclick="toggleExpandable(this)">
-                <h3><a href="https://github.com/anpa6841/bank-app" target="_blank">Mobile Banking</a></h3> <span class="arrow">▼</span>
+                <h3><a href="#">TUI</a></h3> <span class="arrow">▼</span>
             </div>
             <div class="expandable-content">
                 <div class="project-card">
-                    <li>Developed an Android-based mobile banking application in Java with Flask and SqlAlchemy backend.</li>
-                    <li>The app enables users to view their bank accounts and transaction history, transfer funds, and access paginated transaction views for improved performance and user experience.</li>
-                    <li>Implemented robust security measures including storing password hashes securely in the database and ensuring secure client-server communication via HTTPS. </li>
-                    <li>Additionally, automated end-to-end mobile test scenarios using Appium and Pytest, utilizing the Page Object Model to ensure a modular and maintainable testing framework.</li> <br />
                     <div class="group-card">
-                        <h3>Backend & Testing Repositories</h3>
                         <div class="sub-projects">
                             <div class="project-card">
-                                <h3><a href="https://github.com/anpa6841/flask-bank-backend" target="_blank">Flask Bank Backend</a></h3>
-                                <li>Backend Repository for the mobile bank app built in flask </li>
+                                <h3><a href="https://github.com/anpa6841/process-explorer" target="_blank">Process Explorer</a></h3>
+                                <li>A Terminal-Based Process Explorer that shows PID, process name, CPU usage, memory usage, status, thread count, age, and username.</li>
+                                <li>Updates every second and also provides process tree view and process termination capabilities.</li>
                             </div>
                             <div class="project-card">
-                                <h3><a href="https://github.com/anpa6841/android-tests" target="_blank">Android Tests</a></h3>
-                                <li>E2E Tests for Android-based mobile bank app.</li>
+                                <h3><a href="https://github.com/anpa6841/file-explorer" target="_blank">File Explorer</a></h3>
+                                <li>A Terminal-Based file explorer that lets users browse directories and files using arrow keys and view file infomation such as file name, file type, file size and path. </li>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="expandable">
-            <div class="expandable-header" onclick="toggleExpandable(this)">
-                <h3><a href="https://github.com/anpa6841/password-manager-plugin" target="_blank">Password Manager Plugin</a></h3> <span class="arrow">▼</span>
-            </div>
-            <div class="expandable-content">
-                <div class="project-card">
-                    <li>Developed a password manager plugin in JavaScript that securely stores and manages passwords.</li>
-                    <li>Key features include adding, editing, and deleting passwords, auto-generating passwords, importing/exporting passwords in CSV format, and autofilling user credentials.</li>
-                    <li>Site credentials are encrypted and stored in IndexDB using the Web Crypto API, with encryption keys derived from the master password using the PBKDF2 key derivation function.</li>
-                    <li>Implemented session management across multiple tabs using the browser storage API to maintain user sessions securely.</li>
-                </div>
-            </div>
-        </div>
-        <div class="expandable">
-            <div class="expandable-header" onclick="toggleExpandable(this)">
-                <h3><a href="https://github.com/anpa6841/fraud-detection-in-financial-services" target="_blank">Fraud Detection In Financial Services</a></h3> <span class="arrow">▼</span>
-            </div>
-            <div class="expandable-content">
-                <div class="project-card">
-                    <li>Developed a real-time fraud detection system for banking applications by ingesting transaction data through Apache Kafka Producer.</li>
-                    <li>Leveraged Apache Spark Streaming to process data, extract features, and apply an XGBoost model to score each transaction's fraud likelihood and trigger alerts for fraudulent transactions.</li>
                 </div>
             </div>
         </div>
